@@ -9,7 +9,7 @@ import numpy as np
 sys.path.append(str(Path(__file__).parent.parent))
 
 from model.model import SqueezeformerAVSE
-from model.dataset import MockCOGMHEARDataset as COGMHEARDataset, collate_fn
+from model.dataset import COGMHEARDataset, collate_fn
 from baseline.evaluation.objective_evaluation import compute_metrics  # Use your existing metrics
 from baseline.evaluation.objective_evaluation import evaluate_model  # Use your existing evaluator
 

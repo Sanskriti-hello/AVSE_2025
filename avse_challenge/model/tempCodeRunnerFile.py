@@ -1,1 +1,1 @@
-from model.dataset import MockCOGMHEARDataset as COGMHEARDataset, collate_fn
+from model.dataset import COGMHEARDataset, collate_fn

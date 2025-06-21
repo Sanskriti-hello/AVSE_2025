@@ -14,18 +14,8 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 #sys.path.append(str(Path(__file__).parent.parent))
 
 from model.model import SqueezeformerAVSE
-from model.dataset import MockCOGMHEARDataset as COGMHEARDataset, collate_fn
+from model.dataset import COGMHEARDataset, collate_fn
 from baseline.evaluation.objective_evaluation import compute_metrics
-
-USE_MOCK = True  # <-- Toggle this
-#####
-if USE_MOCK:
-    from dataset import MockCOGMHEARDataset  # Add this to dataset.py
-    self.train_dataset = MockCOGMHEARDataset(length=20)
-    self.val_dataset = MockCOGMHEARDataset(length=5)
-else:
-    self.train_dataset = COGMHEARDataset(...)
-
 
 class SqueezeformerTrainer:
     def __init__(self, config_path):

@@ -128,26 +128,6 @@ class COGMHEARDataset(Dataset):
         frames = torch.from_numpy(frames).permute(0, 3, 1, 2)  # [T, C, H, W]
         
         return frames
-#remove this later
-class MockCOGMHEARDataset(torch.utils.data.Dataset):
-    def __init__(self, length=100):
-        self.length = length  # number of samples
-
-    def __len__(self):
-        return self.length
-
-    def __getitem__(self, idx):
-        fake_audio = torch.randn(16000 * 3)  # 3 seconds at 16 kHz
-        fake_video = torch.randn(40, 3, 224, 224)  # 40 frames, 224x224 RGB
-        clean_audio = torch.randn(16000 * 3)
-        
-        return {
-            'mixture_audio': fake_audio,
-            'target_video': fake_video,
-            'clean_audio': clean_audio,
-            'speaker_id': f"mock_{idx}"
-        }
-
 
 def collate_fn(batch):
     """Custom collate function for variable length sequences"""
