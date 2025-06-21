@@ -1,0 +1,24 @@
+# Configuration adapted for your existing COG-MHEAR structure
+data_root: "../.."  # Points to AVSE_2025 root
+version: "avsec4"   # or "avsec1" 
+
+# Training parameters
+batch_size: 2
+epochs: 2
+#batch_size: 4
+learning_rate: 0.0001
+#epochs: 50
+
+# Model parameters (medium configuration)
+model:
+  sample_rate: 16000
+  audio_dim: 512
+  video_dim: 512
+  hidden_dim: 512
+
+# Paths (relative to your structure)
+paths:
+  avse_data: "../../avse_data"
+  baseline: "../baseline"
+  checkpoints: "./checkpoints"
+  outputs: "./outputs"
